@@ -117,18 +117,30 @@ public class SampleController implements Initializable {
 		
 		// Crea listener para el grupo de opciones del menú.
 		
-		colorGroup.selectedToggleProperty().addListener(new ChangeListener<>() {
-
-			@Override
-			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
-				Toggle t = colorGroup.getSelectedToggle(); // opción seleccionada
-				if(t != null) {
-					// Toma el color que tiene guardado y lo asigna al mensaje
-					Color c = (Color)t.getUserData();
-					mensaje.setTextFill(c);
-				}
-				
+		colorGroup.selectedToggleProperty().addListener(e -> {
+			Toggle t = colorGroup.getSelectedToggle(); // opción seleccionada
+			if(t != null) {
+				// Toma el color que tiene guardado y lo asigna al mensaje
+				Color c = (Color)t.getUserData();
+				mensaje.setTextFill(c);
 			}
 		});
+		
+		// Versión sin expresión lambda
+//		colorGroup.selectedToggleProperty().addListener(new ChangeListener<>() {
+//
+//			@Override
+//			public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+//				Toggle t = colorGroup.getSelectedToggle(); // opción seleccionada
+//				if(t != null) {
+//					// Toma el color que tiene guardado y lo asigna al mensaje
+//					Color c = (Color)t.getUserData();
+//					mensaje.setTextFill(c);
+//				}
+//				
+//			}
+//		});
+		
+		
 	}
 }
