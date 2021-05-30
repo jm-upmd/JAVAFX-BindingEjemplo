@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane style="-fx-border-color: gray; -fx-border-width: 5px;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SampleController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu fx:id="opsMenu" mnemonicParsing="false" text="Color">
+            <items>
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <RadioMenuItem mnemonicParsing="false" text="Unspecified Action" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <Label fx:id="mensaje" maxWidth="1.7976931348623157E308" style="-fx-font: bold 72pt serif;" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <VBox fx:id="vBoxIzq" spacing="8.0" style="-fx-padding: 10px; -fx-border-color: gray; -fx-border-width: 0 0 0 5px;" BorderPane.alignment="CENTER">
+         <children>
+            <RadioButton mnemonicParsing="false" text="Negro" />
+            <RadioButton layoutX="25.0" layoutY="20.0" mnemonicParsing="false" text="Rojo" />
+            <RadioButton layoutX="25.0" layoutY="45.0" mnemonicParsing="false" text="Verde" />
+            <RadioButton layoutX="25.0" layoutY="70.0" mnemonicParsing="false" text="Azul" />
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox spacing="10.0" style="-fx-padding: 10px; -fx-border-color: gray; -fx-border-width: 5px 0 0 0;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Escribe aquí:" />
+            <TextField fx:id="txField" text="Hola Caracola" />
+            <CheckBox fx:id="bgCheck" mnemonicParsing="false" text="Fondo rosa" />
+            <Slider fx:id="slider" />
+            <Label text="Valor del deslizador:" />
+            <Label fx:id="sliderVal" text="10" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
